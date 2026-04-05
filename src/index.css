@@ -1,0 +1,18 @@
+/* Google Font  */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import 'tailwindcss';
+@plugin "daisyui";
+
+@layer utilities {
+  body {
+    font-family: 'Playfair Display', serif;
+  }
+  p {
+    color: rgba(19, 19, 19, 0.8);
+  }
+  .containers {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
