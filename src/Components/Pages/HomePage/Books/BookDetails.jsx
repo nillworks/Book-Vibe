@@ -3,7 +3,7 @@ import useBooksData from './../../../Hooks/useBooksData';
 
 const BookDetails = () => {
   const { id } = useParams();
-  const { books, handleRedBookData } = useBooksData();
+  const { books, handleRedBookData, handleWishlistBooks } = useBooksData();
   const extractedBookData = books.find(item => item.bookId == id);
 
   if (!extractedBookData)
@@ -106,7 +106,10 @@ const BookDetails = () => {
             >
               Read
             </button>
-            <button className="px-8 py-2.5 rounded text-sm font-medium bg-[#1a9bd7] text-white hover:bg-[#1585ba] hover:-translate-y-0.5 hover:shadow-lg transition-all cursor-pointer">
+            <button
+              onClick={() => handleWishlistBooks(extractedBookData.bookId)}
+              className="px-8 py-2.5 rounded text-sm font-medium bg-[#1a9bd7] text-white hover:bg-[#1585ba] hover:-translate-y-0.5 hover:shadow-lg transition-all cursor-pointer"
+            >
               Wishlist
             </button>
           </div>
