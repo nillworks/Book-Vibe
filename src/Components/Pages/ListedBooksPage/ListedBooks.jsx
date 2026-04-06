@@ -2,11 +2,12 @@ import SortDropdown from './SortDropdown';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ReadBooks from './ReadBooks/ReadBooks';
-import WishlistBooks from './WishlistBooks/WishlistBooks';
 import useBooksData from '../../Hooks/useBooksData';
+import WishListBooksRender from './WishlistBooks/WishListBooksRender';
 
 const ListedBooks = () => {
-  const { redBookData } = useBooksData();
+  const { redBookData, wishlistBooks } = useBooksData();
+  console.log(wishlistBooks);
 
   return (
     <section className="containers">
@@ -29,14 +30,18 @@ const ListedBooks = () => {
           </TabList>
 
           <TabPanel>
-            <section className="grid items-center gap-4 grid-cols-1">
+            <section className="grid items-center gap-4 grid-cols-1 py-10">
               {redBookData.map(item => (
                 <ReadBooks key={item.bookId} redBookData={item} />
               ))}
             </section>
           </TabPanel>
           <TabPanel>
-            <WishlistBooks />
+            <section className="grid items-center gap-4 grid-cols-1 py-10">
+              {wishlistBooks.map(item => (
+                <WishListBooksRender key={item.bookId} wishlistBooks={item} />
+              ))}
+            </section>
           </TabPanel>
         </Tabs>
       </div>

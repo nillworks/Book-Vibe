@@ -13,7 +13,7 @@ const ReadBooks = ({ redBookData }) => {
 
   return (
     <>
-      <div className="bg-white rounded-2xl p-6  flex gap-5 border flex-col items-center sm:flex-row border-[#e8e3db]">
+      <div className="bg-white rounded-2xl p-6 transition duration-300 hover:-translate-y-1 cursor-pointer  flex gap-5 border flex-col items-center sm:flex-row border-[#e8e3db]">
         {/* Book Cover */}
         <div className="bg-PrimaryBg py-4 px-4 rounded-lg">
           <img
