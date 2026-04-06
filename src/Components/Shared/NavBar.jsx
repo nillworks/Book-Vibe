@@ -35,21 +35,26 @@ const NavBar = () => {
   ));
 
   return (
-    <>
-      <nav className=" containers mx-auto navbar">
-        <div className="navbar-start">
-          <a className="btn btn-ghost text-2xl font-bold">Book Vibe</a>
+    <div className="pb-4">
+      <nav className=" bg-white/10 backdrop-blur-md containers flex items-center gap-2 justify-between px-3 py-5 shadow">
+        <div>
+          <h2 className="text-2xl font-bold">Book Vibe</h2>
         </div>
-        <div className="navbar-center hidden lg:flex gap-5">
-          <ul className="hover:bg-transparent flex gap-5 items-center px-1">
-            {li}
-          </ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn bg-[#23BE0A] text-white font-semibold">Sign In</a>
+
+        {/* Navigation Menu */}
+        <ul className="hidden items-center md:flex">{li}</ul>
+
+        {/* right Buttons */}
+        <div className="flex items-center gap-4">
+          <button className="btn bg-buttonPrimary text-white text-md  rounded-lg">
+            Sign In
+          </button>
+          <button className="btn bg-buttonSrc text-white text-md  rounded-lg">
+            Sign Up
+          </button>
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 

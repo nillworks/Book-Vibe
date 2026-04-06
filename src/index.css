@@ -3,6 +3,11 @@
 
 @import 'tailwindcss';
 @plugin "daisyui";
+@theme {
+  --color-buttonPrimary: #23be0a;
+  --color-buttonSrc: #59c6d2;
+  --color-PrimaryBg: rgba(19, 19, 19, 0.05);
+}
 
 @layer utilities {
   body {
