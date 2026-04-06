@@ -3,6 +3,7 @@ import App from './../../App';
 import Home from '../Pages/HomePage/Home';
 import ListedBooks from '../Pages/ListedBooksPage/ListedBooks';
 import PagesToRead from '../Pages/PagesToRead/PagesToRead';
+import BookDetails from '../Pages/HomePage/Books/BookDetails';
 
 const Router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const Router = createBrowserRouter([
       {
         path: '/pages-to-read',
         element: <PagesToRead />,
+      },
+      {
+        path: '/bookDetails/:id',
+        element: <BookDetails />,
       },
     ],
   },

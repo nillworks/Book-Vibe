@@ -1,5 +1,5 @@
 /* Google Font  */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import 'tailwindcss';
 @plugin "daisyui";
@@ -7,11 +7,15 @@
   --color-buttonPrimary: #23be0a;
   --color-buttonSrc: #59c6d2;
   --color-PrimaryBg: rgba(19, 19, 19, 0.05);
+
+  /* Font Work Sans */
+  --font-PrimaryFont: 'Work Sans', sans-serif;
+  --font-SrcFont: 'Playfair Display', serif;
 }
 
 @layer utilities {
   body {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-PrimaryFont);
   }
   p {
     color: rgba(19, 19, 19, 0.8);
