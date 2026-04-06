@@ -1,9 +1,9 @@
 import { useParams } from 'react-router';
-import useBooksData from '../../../Hooks/useBooksData';
+import useBooksData from './../../../Hooks/useBooksData';
 
 const BookDetails = () => {
   const { id } = useParams();
-  const { books } = useBooksData();
+  const { books, handleRedBookData } = useBooksData();
   const extractedBookData = books.find(item => item.bookId == id);
 
   if (!extractedBookData)
@@ -100,7 +100,10 @@ const BookDetails = () => {
 
           {/* Buttons */}
           <div className="flex gap-3 mt-auto">
-            <button className="px-8 py-2.5 rounded text-sm font-medium bg-white text-gray-800 border border-[#d0c8c0] hover:bg-[#f5f0eb] transition-colors cursor-pointer">
+            <button
+              onClick={() => handleRedBookData(extractedBookData.bookId)}
+              className="px-8 py-2.5 rounded text-sm font-medium bg-white text-gray-800 border border-[#d0c8c0] hover:bg-[#f5f0eb] transition-colors cursor-pointer"
+            >
               Read
             </button>
             <button className="px-8 py-2.5 rounded text-sm font-medium bg-[#1a9bd7] text-white hover:bg-[#1585ba] hover:-translate-y-0.5 hover:shadow-lg transition-all cursor-pointer">
